@@ -25,4 +25,9 @@ urlpatterns = [
     path('user/add/', views.user_add),
     path('tpl/', views.tpl),
     path('login/', views.login),
+    path('orm/', views.orm),
+
+    # 用户管理
+    path('info/list/', views.info_list),
+
 ]
