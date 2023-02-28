@@ -87,3 +87,18 @@ def info_add(request):
 
     # 自动跳转
     return redirect('/info/list/')
+
+
+def info_delete(request):
+    nid = request.GET.get('nid')
+    UserInfo.objects.filter(id=nid).delete()
+    return redirect('/info/list/')
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>INFO列表</h1>
+<a href="/info/add">添加</a>
 <table border="1">
     <thead>
     <tr>
@@ -16,14 +17,17 @@
     </tr>
     </thead>
     <tbody>
-        {% for data in data_list %}
-            <tr>
-                <th>{{ data.id }}</th>
-                <th>{{ data.name }}</th>
-                <th>{{ data.password }}</th>
-                <th>{{ data.age }}</th>
-            </tr>
-        {% endfor %}
+    {% for data in data_list %}
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.password }}</td>
+            <td>{{ data.age }}</td>
+            <td>
+                <a href="/info/delete/?nid={{ data.id }}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
     </tbody>
 </table>
 
