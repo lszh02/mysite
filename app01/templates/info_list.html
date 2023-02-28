@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>INFO列表</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>年龄</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for data in data_list %}
+            <tr>
+                <th>{{ data.id }}</th>
+                <th>{{ data.name }}</th>
+                <th>{{ data.password }}</th>
+                <th>{{ data.age }}</th>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

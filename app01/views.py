@@ -71,3 +71,19 @@ def info_list(request):
     print(data_list)
 
     return render(request, 'info_list.html', {'data_list': data_list})
+
+
+def info_add(request):
+    if request.method == 'GET':
+        return render(request, 'info_add.html')
+
+    # 获取用户提交数据
+    user = request.POST.get('user')
+    pwd = request.POST.get('pwd')
+    age = request.POST.get('age')
+
+    # 添加到数据库
+    UserInfo.objects.create(name=user, password=pwd, age=age)
+
+    # 自动跳转
+    return redirect('/info/list/')
